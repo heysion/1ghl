@@ -3,6 +3,7 @@
 #include <string.h>
 #include <syslog.h>
 
+
 #define LOG_NAME "TestLog"
 
 int main(int argc,char **argv)
@@ -16,7 +17,7 @@ int main(int argc,char **argv)
       return 0;
     }
 
-  syslog(LOG_DEBUG,"log in %s \n message: %s\n",argv[0],argv[1]);
+  syslog(LOG_DEBUG,"log in %s  message: %s\n",argv[0],argv[1]);
   closelog();
   return 0;
 
