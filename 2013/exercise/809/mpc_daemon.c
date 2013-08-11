@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <syslog.h>
+#include <string.h>
 
 #ifndef NOFILE
 #define NOFILE 3
@@ -39,7 +40,20 @@ void mpc_daemon()
 
 void handler(int sig, siginfo_t *info, void *ctx)
 {
-  syslog(LOG_DEBUG,"mpc_daemon:  %d value %d",sig,info->si_value.sival_int);
+  int i=0;
+  char buf[100]={0,};
+  void **p=NULL;
+  //  syslog(LOG_DEBUG,"mpc_daemon:%s %x %x",sig,info,info->si_ptr);
+  //  memcpy(buf,info->si_ptr,100);
+  syslog(LOG_DEBUG,"mpc_daemon:  %d %s",sig,(char *)(info->si_ptr));
+  //  for(i=0;i<5;i++)
+  //  memcpy(buf,&(info->si_int),30);
+  //  buf[30]=0;
+  //  for(i=0;i<30;i++)
+  //	syslog(LOG_DEBUG,"[sig:%d]%x",sig,buf[i]);
+  //  *p=&(*(&(info->si_value)));
+  // for(i=0;i<30;i++)
+  // syslog(LOG_DEBUG,"[sig:%d]%x",sig,p++);
 }
 
 int main()
@@ -68,7 +82,7 @@ int main()
     //sa_sigaction多用于实时信号，可以保存信息
     sigemptyset(&act.sa_mask);
     sigaddset(&act.sa_mask, SIGRTMIN);
-    act.sa_flags = 0; // 设置标志位后可以接收其他进程
+    act.sa_flags = SA_SIGINFO; // 设置标志位后可以接收其他进程
     //    act.sa_flags = SA_SIGINFO; // 设置标志位后可以接收其他进程
     // 发送的数据，保存在siginfo_t结构体中
 
@@ -76,8 +90,9 @@ int main()
       {
 	syslog(LOG_DEBUG,"mpc_daemon:  get SIGRTMIN signal failed");
       }
+    while(1)
+      pause();
 
-    while(1);
 
   return 0;
 }
