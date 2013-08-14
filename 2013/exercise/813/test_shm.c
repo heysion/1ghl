@@ -27,9 +27,10 @@ int main()
 
     if ( pid == 0 )
     {
+      shmaddr = NULL;
         shmaddr = (char *)shmat( shmid, NULL, 0 ) ;
 
-        if ( (int)shmaddr == -1 )
+        if ( shmaddr == NULL )
         {
             perror("shmat addr error") ;
             return -1 ;
@@ -55,7 +56,7 @@ int main()
         printf("chlid pid=%d, shm_lpid = %d \n",pid , buf.shm_lpid ) ;
         shmaddr = (char *) shmat(shmid, NULL, 0 ) ;
 
-        if ( (int)shmaddr == -1 )
+        if ( shmaddr == NULL )
         {
             perror("shmat addr error") ;
             return -1 ;
