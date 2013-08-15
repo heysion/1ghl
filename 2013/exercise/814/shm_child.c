@@ -21,9 +21,10 @@ void clean_shm(int sig, siginfo_t *info, void *ctx)
   printf("get signal from: %d\n",info->si_pid);
   if(( (recv_shmid = info->si_int ) != -1) && (recv_shmid != 0) && (recv_shmid == send_shmid))
     {
-      syslog(LOG_DEBUG,"child: release %d mem",recv_shmid);
+      printf("child: release %d mem",recv_shmid);
       printf("recv shm is ok %d\n",recv_shmid);
       shmctl(recv_shmid, IPC_RMID, NULL) ;
+      exit(0);
     }
   else
     {
@@ -45,8 +46,8 @@ void get_receipt()
       printf("child:  get SIGRTMIN signal failed");
     }
 
-  while(1);
-  pause();
+    while(1);
+    pause();
 }
 
 int main(int argc ,char **argv)
