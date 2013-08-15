@@ -18,69 +18,82 @@ int send_shmid,recv_shmid;
 
 void clean_shm(int sig, siginfo_t *info, void *ctx)
 {
+  printf("get signal from: %d\n",info->si_pid);
   if(( (recv_shmid = info->si_int ) != -1) && (recv_shmid != 0) && (recv_shmid == send_shmid))
     {
       syslog(LOG_DEBUG,"child: release %d mem",recv_shmid);
+      printf("recv shm is ok %d\n",recv_shmid);
       shmctl(recv_shmid, IPC_RMID, NULL) ;
     }
-    else
-      {
-	syslog(LOG_DEBUG,"child: i didn't know who is %d,%d",recv_shmid,info->si_pid);
-      }
+  else
+    {
+      syslog(LOG_DEBUG,"child: i didn't know who is %d,%d",recv_shmid,info->si_pid);
+    }
 }
-int main(int argc ,char **argv)
+
+void get_receipt()
 {
   struct sigaction act;
-  signal(SIGCHLD, SIG_IGN); /* 忽略子进程结束信号，防止出现僵尸进程 */
+  act.sa_sigaction = clean_shm; //sa_sigaction与sa_handler只能取其一
+  sigemptyset(&act.sa_mask);
+  sigaddset(&act.sa_mask, SIGRTMIN);
+  act.sa_flags = SA_SIGINFO; // 设置标志位后可以接收其他进程
+
+  printf("child:  get receipt %d shmid %d",getpid(),send_shmid);
+  if (sigaction(SIGRTMIN, &act, NULL) < 0)
+    {
+      printf("child:  get SIGRTMIN signal failed");
+    }
+
+  while(1);
+  pause();
+}
+
+int main(int argc ,char **argv)
+{
+  pid_t pid = -1;
+
   char*         shmaddr;
+  union sigval val;
 
-
-  openlog("shm",LOG_CONS | LOG_PID , LOG_USER);  
- if (argc != 2)
+  signal(SIGCHLD, SIG_IGN); /* 忽略子进程结束信号，防止出现僵尸进程 */
+  if (argc != 2)
     {
-        fprintf(stderr, "Usage %s pid\n", argv[0]);
-	return 0;
+      fprintf(stderr, "Usage %s pid\n", argv[0]);
+      return 0;
     }
 
-    send_shmid = shmget(IPC_PRIVATE, PSIZE, IPC_CREAT|0600 ) ;
+  pid = atoi(argv[1]); //字符串转换为整数
+  send_shmid = shmget(IPC_PRIVATE, PSIZE, IPC_CREAT|0600 ) ;
 
-    if ( send_shmid < 0 )
+  printf("child:init shm is ok %d %d\n",send_shmid,getpid());
+  if ( send_shmid < 0 )
     {
-            perror("get shm  ipc_id error") ;
-            return -1 ;
+      perror("child:get shm  ipc_id error") ;
+      return -1 ;
 
     }
 
-        shmaddr = (char *)shmat( send_shmid, NULL, 0 ) ;
+  shmaddr = (char *)shmat( send_shmid, NULL, 0 ) ;
 
-        if ( shmaddr == NULL )
-        {
-            perror("shmat addr error") ;
-            return -1 ;
-        }
+  if ( shmaddr == NULL )
+    {
+      perror("shmat addr error") ;
+      return -1 ;
+    }
 
-        strcpy( shmaddr, "Hi, I am child process!\n") ;
-        shmdt( shmaddr ) ;
+  printf("child:get shm is ok %d\n",send_shmid);
 
+  strcpy( shmaddr, "Hi, I am child process!\n") ;
+  shmdt( shmaddr ) ;
 
+  printf("child:send pid %d %d\n",pid,SA_SIGINFO);
 
-    pid_t pid = atoi(argv[1]); //字符串转换为整数
-    printf(" send pid %d %d\n",pid,SA_SIGINFO);
-    union sigval val;
+  val.sival_int = send_shmid; //send shmid
+  sigqueue(pid, SIGRTMIN, val); // 只可以发信号给某个进程，而不能是进程组
+  printf("child:send shm is ok %d\n",send_shmid);
 
-    val.sival_int = send_shmid; //send shmid
-    sigqueue(pid, SIGRTMIN, val); // 只可以发信号给某个进程，而不能是进程组
-
-
-    act.sa_sigaction = clean_shm; //sa_sigaction与sa_handler只能取其一
-    sigemptyset(&act.sa_mask);
-    sigaddset(&act.sa_mask, SIGRTMIN);
-    act.sa_flags = SA_SIGINFO; // 设置标志位后可以接收其他进程
-
-    if (sigaction(SIGRTMIN, &act, NULL) < 0)
-      {
-	syslog(LOG_DEBUG,"child:  get SIGRTMIN signal failed");
-      }
+  get_receipt();
 
   return 0;
 }
