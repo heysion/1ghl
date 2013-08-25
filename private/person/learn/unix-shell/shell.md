@@ -43,3 +43,6 @@ chmod 改变对象权限
 chown 改变所有者
 chgrp 改变所属组
 
+jobs 
+#看后台进程
+
