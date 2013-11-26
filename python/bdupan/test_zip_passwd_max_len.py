@@ -3,9 +3,9 @@
 import os
 import time as t
 now = t.strftime('%H%M%S')
-index = range(1,101)
+index = range(1,201)
 
-for i in range(0,100):
+for i in range(0,200):
 #    cmd = 'zip -qr -P 
     passwd = 'a' * (i+1) 
     cmd = 'zip -qr -P %s test-%s-%s.zip text.out'% (passwd,now,index[i])
