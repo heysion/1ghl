@@ -17,5 +17,6 @@ class people:
 p = people('name',10,20)
 p.p()
 
-people.p()
+#people.p()
+
 
