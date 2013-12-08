@@ -1,0 +1,327 @@
+提纲
+==
+#初识Linux
+#Linux 安装
+#Linux常用命令
+#使用Linux
+#Linux未来&拥抱开源
+#自由交流
+
+开始
+==
+问题1：
+有多少还在使用wp 和 win8的 ？
+
+问题2：
+有多少同学持有Android手机货平板和苹果设备的 ？
+
+问题3：
+有多少同学在使用Linux 系列系统的 ？
+
+很显然Linux 已经深入大家的生活中了，
+今天我想和大家分享一下Linux，今天的主题就是Linux 入门科普探讨
+
+今天的主题是：
+==
+主要想和大家讨论一下Linux，希望通过今天的讨论，大家能对Linux有一个大致的了解，
+然后大家可以一起来玩Linux
+
+大家看到的这张图片是我从网络上收集到的Linux的发行版本组成的一个图片墙，我大概
+统计了一下一共至少有190种Linux发行版本在这个世界上出现过。
+
+Linux 的吉祥物是Tux ，为什么采用企鹅做吉祥物呢，
+据Linus 本人声称小时候被一只企鹅咬过，不知道腾讯的马总用企鹅作图标是神马情况，
+有人可以求证一下不？
+Linux 内核诞生于
+1976年3月2日比尔盖茨发表"给玩家的一封信"最早开始了软件商业化进程，自此以后源代
+码版权所有，软件禁止逆向工程商业软件的开始影响世界。受此影响贝尔实验室决定闭源
+Unix。最开始Unix是源码发布的，于是很多用的爽的人就突然不爽了，于是各种Unix移植
+版本出现了，当时有一个Minix的项目将代码移植到了i386，可惜与Unix不兼容。
+在1991年8月25日，芬兰赫尔辛基大学一名大学生的在Minix通讯组里面发布了兼用Unix的
+i386版本。这名大学生叫林纳斯·托瓦兹
+
+Linux内核开发者
+==
+林纳斯·托瓦兹 Linus Benedict Torvalds, 1969年12月28日－
+林纳斯出生于芬兰赫尔辛基市。毕业于赫尔辛基大学計算機科學系,属于典型的芬兰人，
+腼腆，安静，现代点就是宅。目前就职于开源实验室，专职Linux内核代码维护。 
+#Tips
+林纳斯·托瓦兹 Linus Benedict Torvalds, 1969年12月28日－
+托瓦兹出生于芬兰赫尔辛基市。父亲尼尔斯·托瓦兹（Nils Torvalds）是一名活跃的电台
+记者，祖父奥爾·托瓦兹（Ole Torvalds）是一名詩人和记者。托瓦兹家族属于在芬兰占
+6%的瑞典裔芬蘭人群体。他毕业于赫尔辛基大学計算機科學系，1997年至2003年在美国加
+州硅谷任职于全美达公司（Transmeta Corporation）參與該公司晶片的code morph技術
+研發。後受聘于開源碼發展實驗室（OSDL : Open Source Development Labs, Inc），全
+力开发Linux内核。現任職於Linux基金會。
+#End
+
+对于贝尔实验室闭源Unix事件意见最大的大概应该是当时在MIT工作的一名资深黑客，该黑
+客受此刺激直接导致了（GNU's Not Unix!）计划的诞生，GNU是集合了当时对开放源代码
+需求最迫切，最喜爱自由的一群黑客建立的一个用于对抗商业闭源软件的自由软件组织。
+该名黑客叫理查德·马修·斯托曼
+自由软件GNU计划
+==
+理查德·马修·斯托曼（Richard Matthew Stallman，1953年3月16日）
+查理德是一名热爱自由的美国人，自由软件运动的精神領袖、GNU计划以及自由软件基金会的创立者。
+MIT著名黑客，他的开发设计了Emacs，GNU C编译器 及GDB 调试器。
+起草撰写了GNU通用公共许可证（GPL许可），提出了copyleft的观念对抗copyright
+
+#Tips
+理查德·马修·斯托曼（英语：Richard Matthew Stallman，簡稱rms 1953年3月16日
+－），美國自由软件运动的精神領袖、GNU计划以及自由软件基金会的创立者。作為一個
+著名的黑客，他的主要成就包括Emacs及後來的GNU Emacs，GNU C 編譯器及GDB 调试器。
+他所寫作的GNU通用公共許可證是世上最廣為採用的自由軟體許可證，為copyleft觀念開
+拓出一條嶄新的道路
+#End
+当年GNU完成了Unix所有外围使用软件的编写工作，BUT他们没有写出内核，因为当时他们
+提出设计的内核要求太高了，直接导致了，代码太复杂了，而Linus编写了个超级好用超
+简洁的Unix内核，于是当时做Minix开发和GNU开发的同学们，马上围观上去了，一起动手
+将Linus同学的内核完善了，最后索性将GNU编写的外围软件与Linus的内核给集成起来于
+是1992年GNU/Linux诞生了。
+Linux诞生至今有20多年的历史了，先回故一下
+1990年微软发刚刚发布Windows 3.0 ，那个时候，微软热卖的产品是MS-DOS系统
+而20年后虽然MS系列系统强制的捆绑了MS-DOS，但是MS-DOS系统的影响力无限接近于零了，
+而MS 主打的Windows系列操作系统也重新设计，开发了至少3次以上了，时至今天，
+Windows系列操作系统已经日薄西山，岌岌可危了，而Linux却历时20多年，从草根终于到
+现在的大方异彩。Why ？
+Linx系统特性
+==
+1、Linux是自由软件，源代码开发，免费
+2、已经Linux形成了一个热闹的大集市（大教堂与集市）
+3、Linux系统稳定，高效。
+4、Linux采用的过程结构，每个过程都是独立编写的，适合于不同人的参与
+5、.....
+Linux的过程结构，不但适合于不同的人参与开发，也适合于不同用户，不同的用户可以
+针对不同的过程进行优化，从整个架构上来看，Linux 内核管理计算机硬件等可用资源，
+Linux内核对外提供系统API，API是公开的，符合标准的POSIX标准，不像Windows那样
+会留很多隐藏的API专给自己用，或者被黑客,病毒所利用。
+Linux API可以被Linux Shell，应用程序，库函数等调用
+这样的结构特性在当年不但引起了全世界各地的怪叔叔围观和合作开发，也有不同的商业公司也加
+入了进来，大家按照自己的理念和对Linux的理解搭配不同软件，发布不同的Linux发行版
+本，如Redhat，Ubuntu，Debian，Gentoo，ArchLinux等等，历史上Linux的不同发行版本
+最少有200多个，对于一般用户日常用途和生活开发大家可以选择Unbutu
+
+Ubuntu
+==
+Ubuntu是基于Debian发行版本和GNOME桌面环境.
+Ubuntu的目标在于为一般用戶提供一個最新的、同時又相当穩定的主要由自由软件构建组
+成的操作系统。Ubuntu现今具有庞大的社群力量，用戶可以方便地从社群获得得帮助。
+Ubuntu界面漂亮，操作简单，特别适合无特殊癖好的用户。
+Ubuntu的中文名字是“友帮拓”
+同时Ubuntu中国用户定制版本Ubuntu Kylin 麒麟
+
+#Ubuntu
+Ubuntu是基於Debian發行版和GNOME桌面環境，于Debian的不同在於它每6個月會發佈一個新版本，每2年發布一個LTS長期支援版本。 普通的桌面版可以獲得發布後18個月内的支援，標為LTS（長期支持）的桌面版可以獲得更長時間的支援。[10] [1]例如，Ubuntu 8.04 LTS（代號Hardy Heron），其桌面應用系列可以獲得為期3年的技術支援，伺服器版可以獲得為期5年的技術支援[11]。而自Ubuntu 12.04 LTS開始，桌面版和伺服器版均可獲得為期5年的技術支援。2013年3月据消息称，Ubuntu計劃在4月25日Ubuntu 13.04發布後，將非LTS版本的支援時間自18個月縮短至9個月，並採用滚动发布模式，允許開發者在不升級整個發行版的情况下升級單個核心套件。
+#End
+
+Redhat
+==
+Redhat(红帽)是世界领先的开源解决方案供应商,最早的Linux支持厂商，Red Hat的Linux
+分为两个系列，其中一个是由Red Hat公司提供收费技术支持和更新的Red Hat
+Enterprise Linux系列；另一个是由社区开发的免费的Fedora系列。Red Hat发行版本易
+于安装操作友好，相对与其他Linux发行版本来说较为稳定，其企业版本RHEL版本在企业
+使用Linux比中占绝大多数,同时RedHat也为开源社区做出巨大贡献，有开源界的领导者的
+称号。在Linux内核源代码贡献排行榜中Redhat排行前三
+RHCE(Red Hat认证工程师)一般等同于Linux标准认证。
+CentOS为 RHEL 源码再编译版本，仅替换了RHEL里面红帽的自动更新验证服务，其他地方
+出了发行版本的Logo不同外找不出其他不同版本，据说Redhat也比较鼓励用户使用CentOS
+版本，因为Redhat卖的不是系统是服务，只要用户多自然在需要的时候会来买他们的支持
+服务。
+But RHEL系统不适合与个人用途，个人用户建议采用Fedora，最新版本Fedora为20 beta
+版本.
+
+#Fedora
+/fɪ'dɔ:rə/
+
+#Archlinux
+ArchLinux是我体验国国最有个性同时也比较好上手的一个Linux发行版本。
+Archlinux针对主要的特定处理器进行国专门的系统优化过，能够更好地利用CPU周期以提
+高性能。相比Debian／Ubuntu、SUSE、RedHat／Fedora等其他发行版，Archlinux属于轻
+量级选手，其简单的设计让它容易被轻松扩展和配置成为任何想要的系统类型。
+ArchLinux奉行的是KISS原则，简单就是美。因此ArchLinux系统极其简洁不像其他发行版
+本那样“臃肿”
+对于水平高，喜欢折腾的同学可以推荐一下，But不建议在生产环境折腾ArchLinux。
+
+#KISS
+KISS原则是英语 Keep It Simple, Stupid 的首字母缩略字。KISS原则是指在设计当中應當注重簡約的原则。同時這原則亦有應用在商業書信、設計電腦軟件、動畫、工程上。原文當中有很多其他版本，包括："Keep It Simple & Stupid"（在西歐文學中最常使用）、"Keep It Sweet & Simple"、"Keep It Short & Simple"、"Keep it Simple, Sweetheart" 及 "Keep it Simple, Sherlock"。
+
+#Linux安装
+一般情况下面采用光盘模式安装，就目前来说，大部分笔记本都取消光驱了，因此推荐使用U盘安装
+准备512M以上的U盘一枚。
+一下以Ubuntu讲解为例
+1、至Ubuntu官方网站下载LiveCD ISO文件
+2、校验ISO文件MD5值
+3、Windows系统采用 UltraISO 或者 Universal USB Installer 将ISO文件写入U盘设备
+4、重启计算机使用U盘引导计算机
+5、安装Linux
+
+#RPM软件管理
+RPM,全名 Redhat Package Mananger,由Redhat公司发展起来，逐渐成为Redhat CentOS SUSE等发现版面使用的软件管理标准
+RPM软件包是编译后打包的软件版本，其安装使用方便，因其对环境的依赖性强导致对发现版本的依赖比较突出，很多软件在相同类型发现版本的不同版本号需要不同的版本。
+RPM常用命令
+rpm -ivh xxx.rpm #安装
+rpm -Uvh xxx.rpm #更新
+rpm -qa #查询已安装
+rpm -e xxx #删除
+
+#yum软件管理
+yum客户端通过与yum服务器的交互获取，需要安装软件的各种依赖条件，然后从服务下载缺少的软件rpm到本地，再进行安装
+yum服务器的根据客户端的需求返回rpm包安装list，客户端依据list进行下载和安装
+
+yum使用
+yum list|info|search|install|update|remove|clean
+yum check-update #列克更新软件包
+yum list xxx* #查找xxx软件包情况
+yum search xxx #查找软件
+yum install xxx #安装
+yum update xxx #更新
+yum remove xxx #删除
+
+#Linux常用命令
+su pwd cd find 
+tar gzip mkdir mv 
+reboot halt cp sort 
+wc head tail cat
+ls grep rm id
+
+top kill ps mount ln passwd chmod uname wget who w
+
+wc -l 统计行数
+head -5 列出最前5个
+tail -5 列出最后5个
+cd ..可进入上一层目录
+cd -可进入上一个进入的目录
+cd ~可进入用户的home目录
+$tar cvf ye.tar *.* #打包当前所有文件
+tar tvf ye.tar #测试或查看当前包内文件
+tar xvf ye.tar #解包
+gzip ye.txt #打包
+$gzip -d ye.txt.gz #解包
+
+Linux系统有严格的权限管理，在平常使用是尽量不要使用root权限
+root权限虽然用起来很爽也很酷但是一般是人都会犯错误，像本吊丝有一次升级完系统内
+核，删除旧内核时，不行的执行了下面这条命令，结果，，，，，悲剧了。
+#rm –rf / boot/vmlunz.old
+一般情况下建议用普通用户，需要使用root权限时使用sudo命令来申请root权限
+
+man page
+==
+最后一个命令 man
+Linux的帮助系统，强大，涵盖各种常用命令的用法用途，甚至开发用的库函数也可以进行查询
+作为一个粗学者必须要学会的一个命令，作为一个老手也经常需要用到的一个命令。
+需要知道 ls 命令的用途，和使用
+输入man ls
+查询rand函数使用输入 man rand 即可查询，该命令有多个章节，因此会提示选择或者默
+认选择一个，好切换指定章节用 man 3 rand 即可
+
+命令走的是操作快捷，功能强大。大批量复杂操作可以使用SHELL脚本一次执行，简单高效。
+GUI走的人机交互界面友好，操作直观。
+虽然目前的主流是GUI，友好的人机交互，但是Linux 的命令行模式还是比较受欢迎的，个人
+认为是Linux官方没有完美like apple 那样的界面，所以大家都偏向喜欢命令行
+命令行最重要的核心就是Shell，Linux官方默认的shell是 bash
+
+sh
+第一个shell起源于unix Bourne Shell简称sh，设计主要面向程序员
+csh  
+面向系统用户，侧重交互
+ksh  
+结合了sh和csh的编程和交互兼并，目前号称最安全的shell，大概是因为功能少吧
+bash
+Bash GNU计划用来取代Bourne Shell的，功能强大，稳定目前Linux下官方默认shell
+
+shell的事情两三句话是讲不清的，以后有时间再和大家一起讨论
+现在接着谈谈GUI的事情
+#Linux的GUI
+首先Linux本身不给提供GUI图形界面的，Linux下面的图形界面是由Xorg以服务的形式提
+供的，Xorg是遵循X11的标准协议。
+在Linux系统中GUI界面不但是可以选配的，而且是可以高度自定义的
+重量级 Gnome 和 KDE
+相对轻量级 Xfce TWM Awesome
+轻量级  slim + Awesome | I3
+
+#Gnome 特色
+Gnome 是经典系列的桌面管理器，其特色是操作界面友好，图形界面漂亮，集成功能大，
+且强大，用户多，社区活跃，官方支持全面，中文帮助作的相对于其他来说是比较好的。
+功能稳定，但是消耗的资源比较多，配置比较旧的电脑跑起来不是很流畅的，一般两年内
+的电脑可以跑最新稳定版本的Gnome，KDE。而生产环境一般推荐使用Gnome .
+
+#Xfce 特色
+相对与经典版本的功能全面，界面花哨，资源要求高，来说，Xfce系列 代表着功能强大，
+且实用，但是界面朴素。适合配置不是特别高的电脑。
+
+#Awesome 特色
+相对于功能强大，全面的桌面管理器来说，Awesome代表着功能简单，高度自定义。一般
+此类桌面管理器，仅简单的提供一下视窗类功能，不过经过自己一番精心折腾，雕琢可以
+配置成为，超级实用，界面超级豪华。
+
+
+#日常Linux软件
+常用软件列表
+上网：
+Firefox  chrome 
+聊天：
+pidgin  webqq  
+下载工具
+FileZilla  amule mldonkey wget DownThemAll!(firefox插件) qBittorrent
+办公
+wps libreOffice Dia xmind 7zip ibus-pinyin rimeime fcitx scim(stop)
+开发相关
+Doxygen Planner  VirtualBox  NetBeans Eclipse Emacs 
+休闲
+deedbeef rhythmbox mplayer avidemux 
+其他
+GIMP ImageViewer Screenshot Shuuer xpdf epdfview chmsee stardict shadowsocks smarthosts
+上网
+Firefox | chrome  + pidgin + webqq + ibus-pinyin  + mplayer + deadbeef + smarthosts
+网购
+Firefox | chrome + 手机网银
+开发
+eclipse + Netbean + Emacs + smarthosts + shadowsocks(影梭)
+
+Linux未来&拥抱开源
+==
+Linux 未来发展方向
+1、虚拟化
+2、安全性
+3、云计算
+4、智能化
+5、娱乐性
+
+开源的理念
+你和我各有一个苹果，如果我们交换苹果的话，我们还是只有一个苹果。
+但当你和我各有一个想法，我们交换想法的话，我们就都有两个想法了。
+If you have an apple and I have an apple, and we exchange apples, we both
+still only have one apple. But if you have an idea and I have an idea, 
+and we exchange ideas, we each now have two ideas.
+
+作为企业选择开源的理由
+1、安全
+2、高质量&高定制化能力
+3、自由&灵活性
+4、 标准化&成本
+
+1、安全
+源代码随时可以审阅，软件提供商或开发着无法故意留下后门或漏洞，有大量的人在关注
+源代码，若是软件有缺陷能尽早的及时发现。
+2、高质量&高定制化能力
+开源代码界一般只有优秀的软件和代码能够长久的存活下来，一般的软件都是依靠质量获
+得良好的口碑和客户满意，从而促使用户购买他们的服务，使从事开源的企业和个人获得
+受益，与传统的商业软件公司相比规模虽然比不上，但是依托整个优秀的开源体系，提供
+特色化的个性服务，足以满足企业和个人各种各样的需求和体验，反而传统的商业软件公
+司提供的软件造价成本高昂，服务单一，对于前者企业完全可以依据自己的需求，对软件
+进行二次开发或者聘请其他公司为其进行量身定制开发。
+
+3、自由&灵活性
+目前有很多个人和公司从事开源软件工作开发和服务，企业选择开源和自由软件完全可以
+摆脱对单一软件供应厂商的依赖，可以构建灵活且不依赖于特定平台，特定软件的企业平
+台。
+
+4、 标准化&成本
+使用闭源软件，通常情况下面你只有软件厂商授权的使用权限，你不能逆向工程该软件，
+该软件有了BUG，也只能忍受或者通过傲慢的反馈加上长期的等待获得解决，而且每次版
+本的更新都是需要大量成本支出的，反而开源软件你可以拥有源代码，基本上大部分的开
+源软件都遵守业界的标准，BUG更新及时，有BUG，你源码在手也可以自己修复。大部分优
+秀的开源软件都有一个活跃的社区支撑，在社区内你可以找到最新的BUG和解决方案，同
+时使用开源软件版本更新成本支出很少，大部分著名的开源软件提供的7*24小支持服务，
+要比传统的软件服务费用低。而且服务质量也高。
+

@@ -1,0 +1,31 @@
+#初识Linux
+开始(一张很多Linux设备组成的图)
+什么是Linux（一张PPT 背景企鹅）
+Linux历史简略(PPT)
++Linux 内核开发者
++自由软件之父
++其他黑客
+走入Linux世界(一张PPT多个发现版本)
++Ubuntu 介绍
++RedHat 介绍
++ArchLinux 介绍哦啊
+++KISS原理
+#Linux 安装
++CentOS安装流程介绍
++RPM软件管理
++yum 安装软件
+#Linux常用命令
++常用命令列表
++命令与GUI
++SHELL控制机器
+#使用Linux
++使用帮助系统MAN
++日常Linux软件
+#Linux未来&拥抱开源
++Linux现状&未来
++开源改变了世界
++开源需要你我他
++拥抱开源吧
+#自由交流
+
+#结束
