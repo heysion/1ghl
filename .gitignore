@@ -17,3 +17,7 @@
 *.exe
 *.out
 *.app
+
+#Python
+*.ui
+*.glade
