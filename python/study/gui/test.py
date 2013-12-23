@@ -3,10 +3,11 @@ from PySide.QtCore import *
 from PySide.QtGui import *
 from testgui import Ui_Dialog
 from PySide import QtCore, QtGui
+
 def accept2():
 	print 'hell'
-def accept3():
-	print 'hell'
+def reject2():
+	print 'hell2'
 
 
 class MainWindow(QMainWindow, Ui_Dialog):  
@@ -15,7 +16,7 @@ class MainWindow(QMainWindow, Ui_Dialog):
             self.setupUi(self)  
 #            self.buttonBox.connect(self.accepted)
 	    QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL("accepted()"), accept2)
-#	    QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL("accepted()"), accept3)
+	    QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL("rejected()"), reject2)
 
 if __name__ == '__main__':  
     app = QApplication(sys.argv)  
