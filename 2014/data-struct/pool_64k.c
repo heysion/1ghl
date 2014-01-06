@@ -17,7 +17,7 @@ typedef struct mem_info
 }pool , *info;
 */
 
-int main(int argc , char **argv)
+int main2(int argc , char **argv)
 {
 
   int i ;
@@ -81,14 +81,11 @@ int main(int argc , char **argv)
 }
 
 
-int main2(int argc , char **argv)
+int main(int argc , char **argv)
 {
 
   int i ;
   info p,t;
-
-
-    mwDoFlush(1);
 
   p = (info)malloc(sizeof(page)) ;
   p->next ;
