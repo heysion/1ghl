@@ -7,13 +7,11 @@ typedef struct Node{
   struct LNode *next;
 }LNode , *List;
 
-List init_list(int len)
+List init_list(List p,int len)
 {
   int i;
-  List temp,p,t;
+  List temp,t;
 
-  p = (List )malloc(sizeof(LNode) );
-  p->next = NULL;
   t = p;
 
   for(i=len ;i > 0 ;i-- )
@@ -50,7 +48,11 @@ int main(int argc,char **argv)
 {
   int i;
   List p,t;
-  p=init_list(atoi(argv[1]));
+  p = (List )malloc(sizeof(LNode) );
+  p->next = NULL;
+
+/*  init_list(p,atoi(argv[1])); */
+init_list(p,3);
   
   printf("%d %d\n",sizeof(p),sizeof(struct Node));
 
