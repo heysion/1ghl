@@ -1,0 +1,78 @@
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Wed Jan  8 10:41:39 2014
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+
+Stopped at Wed Jan  8 10:41:39 2014
+
+
+Memory usage statistics (global):
+ N)umber of allocations made: 3
+ L)argest memory usage      : 10
+ T)otal of all alloc() calls: 30
+ U)nfreed bytes totals      : 0
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Wed Jan  8 10:42:18 2014
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+WILD free: <4> use_point_array.c(22), unknown pointer 0x7fffadda43c0
+
+Stopped at Wed Jan  8 10:42:18 2014
+
+unfreed: <3> use_point_array.c(16), 10 bytes at 0x1fa53d0  	{61 62 63 00 00 00 00 00 00 00 .. .. .. .. .. .. abc.......}
+unfreed: <2> use_point_array.c(16), 10 bytes at 0x1fa5370  	{61 62 63 00 00 00 00 00 00 00 .. .. .. .. .. .. abc.......}
+unfreed: <1> use_point_array.c(16), 10 bytes at 0x1fa5310  	{61 62 63 00 00 00 00 00 00 00 .. .. .. .. .. .. abc.......}
+
+Memory usage statistics (global):
+ N)umber of allocations made: 3
+ L)argest memory usage      : 30
+ T)otal of all alloc() calls: 30
+ U)nfreed bytes totals      : 30
+MEMWATCH detected 4 anomalies
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Wed Jan  8 10:43:14 2014
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+WILD free: <4> use_point_array.c(22), unknown pointer 0x400db0
+
+Stopped at Wed Jan  8 10:43:14 2014
+
+unfreed: <3> use_point_array.c(16), 10 bytes at 0x80c3d0  	{61 62 63 00 00 00 00 00 00 00 .. .. .. .. .. .. abc.......}
+unfreed: <2> use_point_array.c(16), 10 bytes at 0x80c370  	{61 62 63 00 00 00 00 00 00 00 .. .. .. .. .. .. abc.......}
+unfreed: <1> use_point_array.c(16), 10 bytes at 0x80c310  	{61 62 63 00 00 00 00 00 00 00 .. .. .. .. .. .. abc.......}
+
+Memory usage statistics (global):
+ N)umber of allocations made: 3
+ L)argest memory usage      : 30
+ T)otal of all alloc() calls: 30
+ U)nfreed bytes totals      : 30
+MEMWATCH detected 4 anomalies
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Wed Jan  8 10:43:42 2014
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+
+Stopped at Wed Jan  8 10:43:42 2014
+
+
+Memory usage statistics (global):
+ N)umber of allocations made: 3
+ L)argest memory usage      : 10
+ T)otal of all alloc() calls: 30
+ U)nfreed bytes totals      : 0
