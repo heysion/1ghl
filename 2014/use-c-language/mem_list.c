@@ -52,21 +52,14 @@ int add_list(list_t *pool,void *d)
 
 int del_list(list_t *pool)
 {
-  int i=0;
   list_t *t;
-  void * temp;
-
-  /*
   for(t=pool;t!=NULL;t=t->next)
     {
-      temp = t->d;
-      free(temp);
+      free(t->d);
       free(t);      
-      i++;
-      printf("del :%d \n",i);
-
     }
-  */
+
+  /*
   t = pool->next ;
   free(pool->d);
   free(pool);
@@ -78,7 +71,7 @@ int del_list(list_t *pool)
   t = pool->next ;
   free(pool->d);
   free(pool);
-  
+  */  
   return 0;
 }
 int main()
