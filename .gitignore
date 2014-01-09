@@ -21,3 +21,6 @@
 #Python
 *.ui
 *.glade
+
+#log
+*.log
