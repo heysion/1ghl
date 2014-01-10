@@ -11,6 +11,7 @@ typedef struct mem_list
   list_t *next;
 }mlist;
 
+list_t *plist ;
 int add_list(list_t *pool,void *d)
 {
   list_t *t;
@@ -49,6 +50,64 @@ int add_list(list_t *pool,void *d)
     }
   return 1;
 }
+
+int cgmalloc(void *d)
+{
+  list_t *t;
+  list_t *temp;
+
+ start:
+   if(NULL != plist)
+     {
+      t = plist->next;
+      if(NULL == t && NULL == plist->d)
+	{
+	  plist->d = d ;
+	  plist->next = NULL ;
+	  return 0;
+
+	}else if(NULL == t && NULL != plist->d)
+	{
+	  temp = (list_t *)malloc(sizeof(list_t)) ;
+	  temp->d = (void *)d ;
+	  temp->next = NULL ;
+	  plist->next = temp ;
+
+	  return 0;
+	}
+      else
+	{
+	  temp = (list_t *)malloc(sizeof(list_t)) ;
+	  temp->d = d ;
+	  temp->next = plist->next ;
+	  plist->next= temp ;
+
+	  return 0;
+	}
+     }
+   else
+     {
+       plist = (plist_t )malloc(sizeof(list_t)) ;
+       plist->next = NULL ;
+       plist->d = NULL ;
+       goto start ;
+     }
+
+  return -1;
+}
+
+
+int cgfree()
+{
+  list_t *t;
+  for(t=plist;t!=NULL;t=t->next)
+    {
+      free(t->d);
+      free(t);      
+    }
+  return 0;
+}
+
 
 int del_list(list_t *pool)
 {
