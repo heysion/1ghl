@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "memwatch.h"
+//#include "memwatch.h"
 
 typedef struct mem_list * plist_t ;
 typedef struct mem_list list_t ;
@@ -51,11 +51,13 @@ int add_list(list_t *pool,void *d)
   return 1;
 }
 
-int cgmalloc(void *d)
+void * cgmalloc(size_t sz)
 {
   list_t *t;
   list_t *temp;
-
+  void * d;
+  
+  d=malloc(sz);
  start:
    if(NULL != plist)
      {
@@ -64,7 +66,7 @@ int cgmalloc(void *d)
 	{
 	  plist->d = d ;
 	  plist->next = NULL ;
-	  return 0;
+	  return d;
 
 	}else if(NULL == t && NULL != plist->d)
 	{
@@ -73,7 +75,7 @@ int cgmalloc(void *d)
 	  temp->next = NULL ;
 	  plist->next = temp ;
 
-	  return 0;
+	  return d;
 	}
       else
 	{
@@ -82,7 +84,7 @@ int cgmalloc(void *d)
 	  temp->next = plist->next ;
 	  plist->next= temp ;
 
-	  return 0;
+	  return d;
 	}
      }
    else
@@ -93,17 +95,20 @@ int cgmalloc(void *d)
        goto start ;
      }
 
-  return -1;
+  return d;
 }
 
 
 int cgfree()
 {
   list_t *t;
+  int i =0;
   for(t=plist;t!=NULL;t=t->next)
     {
       free(t->d);
-      free(t);      
+      free(t);
+      printf("del %d\n",i);
+      i++;
     }
   return 0;
 }
@@ -139,7 +144,22 @@ int main()
   char *p[3];
   int i =0;
 
-  mwDoFlush(1);
+  for(;i<3;i++)
+    {
+      p[i]=(char *)cgmalloc(i+10);
+      add_list(pool,(void *)p[i]);
+    }
+
+  cgfree();
+  return 0;
+}
+int main2()
+{
+  list_t *pool ;
+  char *p[3];
+  int i =0;
+
+  //  mwDoFlush(1);
   pool = (plist_t )malloc(sizeof(list_t)) ;
   pool->next = NULL ;
   pool->d = NULL ;
