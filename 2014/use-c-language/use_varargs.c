@@ -19,7 +19,7 @@ void printargs(int arg1, ...) /* 輸出所有int型態的參數，直到-1結束
   int i;
  
   va_start(ap, arg1); 
-  for (i = arg1; i != -1; i = va_arg(ap, int))
+  for (i = arg1; i != -1 ; i = va_arg(ap, int))
     printf("%d ", i);
   va_end(ap);
   putchar('\n');
@@ -27,8 +27,7 @@ void printargs(int arg1, ...) /* 輸出所有int型態的參數，直到-1結束
 
 int main()
 {
-  printargs(3,1,2,3,4);
-
+  printargs(3,1,2,3,-4,-1);
 
   error("%s,%d,%s","abc",1232,"KK");
   return 0;
