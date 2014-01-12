@@ -25,6 +25,18 @@ void printargs(int arg1, ...) /* 輸出所有int型態的參數，直到-1結束
   putchar('\n');
 }
 
+/* 
+%d%s%f 
+
+*/
+void printff(char *fmt,...)
+{
+  va_list ap;
+  va_start(ap,fmt);
+  fprintf(stderr,"ptf:");
+  
+}
+
 int main()
 {
   printargs(3,1,2,3,-4,-1);
