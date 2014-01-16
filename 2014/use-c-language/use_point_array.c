@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "memwatch.h"
+#include <mcheck.h>
 
 int main()
 {
@@ -9,16 +9,13 @@ int main()
   char * p;
   int i=0;
 
-  mwDoFlush(1);
 
-  for (;i<3;i++)
-    {
-      a[i] = (char *)malloc(10);
-      p=a[i];
-      strncpy(p,"abc",10);
-      printf("%d : %s\n",i,p);
-      free(a[i]);
-    }
+  setenv("MALLOC_TRACE","output.out",1);
+  mtrace();
+
+  p=(char *)malloc(3*20);
+  free(p);
+
 
   return 0;
 }
