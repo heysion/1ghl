@@ -22,6 +22,19 @@ int main()
   printf("%d ,%d ,%d\n",star.tv_usec,end.tv_usec,diff.tv_usec);
 
 
+  diff=end=star = date_zero  ;
+  printf("%d ,%d ,%d\n",star.tv_usec,end.tv_usec,diff.tv_usec);
+
+  gettimeofday(&star,NULL);
+  printf("%d ,%d ,%d\n",star.tv_usec,end.tv_usec,diff.tv_usec);
+
+  gettimeofday(&end,NULL);
+  printf("%d ,%d ,%d\n",star.tv_usec,end.tv_usec,diff.tv_usec);
+
+  diff.tv_usec = end.tv_usec - star.tv_usec ;
+  printf("%d ,%d ,%d\n",star.tv_usec,end.tv_usec,diff.tv_usec);
+
+
   return 0;
 }
 
