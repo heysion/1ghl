@@ -66,16 +66,24 @@ $4096 ,1 0000 0000 0000
 int main(int argc,char **argv)
 {
   int a,b,c;
-  if( argc !=3 )
+  if( argc !=2 )
     {
       printf("xx: 32 31\n");
+      return 0;
     }
   a = atoi(argv[1]);
-  b = atoi(argv[2]);
+  //  b = atoi(argv[2]);
 
-  printf("%d,%d\n",a,b);
-  c=(b>>4);
-  printf("%d\n",c);
-  
+  //  printf("%d,%d\n",a,b);
+  //  c=(b>>4);
+  //  printf("%d\n",c);
+  if((h0xFFFFFE00 & a ))
+    {
+      printf("a: %d %d\n ",a,0xFFFFFE00&a);
+    }
+  else
+    {
+      printf("ls 512 a: %d %d\n",a,0xFFFFFE00&a);
+    }
   return 0;
 }
