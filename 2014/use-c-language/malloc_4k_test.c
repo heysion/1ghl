@@ -27,6 +27,9 @@ int main(int argc ,char **argv)
   t = atoi(argv[1]);
   n = t >10 ? t : 10 ;
 
+  p = malloc(10);
+  free(p);
+  p =NULL ;
   time_init(star,end,diff);
   printf("%d ,%d ,%d\n",star.tv_usec,end.tv_usec,diff.tv_usec);
 
@@ -36,6 +39,7 @@ int main(int argc ,char **argv)
     {
       p =malloc(4096);
       free(p);
+      p = NULL ;
     }
 
   time_stop(end);
@@ -43,15 +47,16 @@ int main(int argc ,char **argv)
 
   printf("%d : %d ,%d ,%d\n",n,star.tv_usec,end.tv_usec,diff.tv_usec);
 
-  n = (t == n ) ? n * 128 : t * 128 ; 
+  n = (t == n ) ? n * 10 : t * 10 ; 
   time_reset(star,end,diff);
 
   time_star(star) ;
 
   for(i=0 ;i < n ; i++)
     {
-      p =malloc(32);
+      p =malloc(409);
       free(p);
+      p = NULL ;
     }
 
   time_stop(end);
