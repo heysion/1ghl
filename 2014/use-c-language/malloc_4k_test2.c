@@ -53,6 +53,10 @@ int main(int argc ,char **argv)
   time_reset(star,end,diff);
   printf("%d : %d ,%d ,%d\n",n,star.tv_usec,end.tv_usec,diff.tv_usec);
   //   sleep(1);
+    n = (t == n ) ? n / 2 : t / 2 ; 
+  time_reset(star,end,diff);
+  printf("%d : %d ,%d ,%d\n",n,star.tv_usec,end.tv_usec,diff.tv_usec);
+
   time_star(star) ;
   for (k=0;k<t2;k++)
     {
@@ -62,6 +66,9 @@ int main(int argc ,char **argv)
 	  free(p);
 	  p = NULL ;
 	}
+      p =malloc(8192);
+      free(p);
+      p = NULL ;
     }
   time_stop(end);
   time_diff(star,end,diff);
