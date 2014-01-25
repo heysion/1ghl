@@ -39,7 +39,7 @@ int main(int argc ,char **argv)
     {
       for(i=0 ;i < n ;i++)
 	{
-	  p =malloc(4096);
+	  p =malloc(4090);
 	  free(p);
 	  p = NULL ;
 	}
@@ -58,7 +58,7 @@ int main(int argc ,char **argv)
     {
       for(i=0 ;i < n ; i++)
 	{
-	  p =malloc(4090);
+	  p =malloc(4096);
 	  free(p);
 	  p = NULL ;
 	}
