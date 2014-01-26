@@ -39,7 +39,7 @@ int main(int argc ,char **argv)
     {
       for(i=0 ;i < n ;i++)
 	{
-	  p =malloc(4090);
+	  p =malloc(40960);
 	  free(p);
 	  p = NULL ;
 	}
@@ -52,7 +52,7 @@ int main(int argc ,char **argv)
   //  n = (t == n ) ? n * 10 : t * 10 ; 
   time_reset(star,end,diff);
   printf("%d : %d ,%d ,%d\n",n,star.tv_usec,end.tv_usec,diff.tv_usec);
-
+  //  sleep(2);
   time_star(star) ;
   for (k=0;k<t2;k++)
     {
