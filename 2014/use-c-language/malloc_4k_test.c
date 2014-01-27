@@ -52,7 +52,7 @@ int main(int argc ,char **argv)
   //  n = (t == n ) ? n * 10 : t * 10 ; 
   time_reset(star,end,diff);
   printf("%d : %d ,%d ,%d\n",n,star.tv_usec,end.tv_usec,diff.tv_usec);
-   sleep(1);
+  //   sleep(1);
   time_star(star) ;
   for (k=0;k<t2;k++)
     {
