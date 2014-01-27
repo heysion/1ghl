@@ -21,7 +21,7 @@ int main(int argc ,char **argv)
 
   if(argc != 3)
     {
-      printf("argv error %ds",argc);
+      printf("argv error %ds \n",argc);
       return 0;
     }
   t = atoi(argv[1]);
@@ -39,7 +39,7 @@ int main(int argc ,char **argv)
     {
       for(i=0 ;i < n ;i++)
 	{
-	  p =malloc(50000);
+	  p =malloc(5000);
 	  free(p);
 	  p = NULL ;
 	}
