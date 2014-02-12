@@ -3,7 +3,7 @@
 #include <pthread.h>
 #include <unistd.h>
 
-pthread_t ntid;
+
 void * print_abc(void *arg)
 {
   pid_t pid;
@@ -31,14 +31,18 @@ void * print_ab(void *arg)
 int main(int argc,char **argv)
 {
   int err ;
+  pthread_t ntid;
+  void * tret ;
   err = pthread_create(&ntid,NULL,print_abc,"abc");
+  pthread_join(ntid,&tret) ;
   if(err != 0 )
     {
       return -1;
     }
   print_ab("123");
   sleep(1);
-  print_ab("456");
+  printf("%p[%s]\n",&tret,tret);
+
   return 0;
 }
 
