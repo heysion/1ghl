@@ -1,0 +1,44 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <pthread.h>
+#include <unistd.h>
+
+pthread_t ntid;
+void * print_abc(void *arg)
+{
+  pid_t pid;
+  pthread_t tid;
+  
+  printf("start\n");  
+  pid = getpid();
+  tid = pthread_self();
+  printf("pid %u talk [%s] to tid %u\n",(unsigned int)pid,(char *)arg,(unsigned int)tid);
+  printf("end\n");
+  return NULL ;
+}
+
+void * print_ab(void *arg)
+{
+  pid_t pid;
+  pthread_t tid;
+
+  pid = getpid();
+  tid = pthread_self();
+  printf("pid %u talk [%s] to tid %u\n",(unsigned int)pid,(char *)arg,(unsigned int)tid);
+  
+  return NULL ;
+}
+int main(int argc,char **argv)
+{
+  int err ;
+  err = pthread_create(&ntid,NULL,print_abc,"abc");
+  if(err != 0 )
+    {
+      return -1;
+    }
+  print_ab("123");
+  sleep(1);
+  print_ab("456");
+  return 0;
+}
+
