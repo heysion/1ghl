@@ -13,7 +13,8 @@ void * print_abc(void *arg)
   pid = getpid();
   tid = pthread_self();
   printf("pid %u talk [%s] to tid %u\n",(unsigned int)pid,(char *)arg,(unsigned int)tid);
-  pthread_exit((void *)1);
+  //  pthread_exit((void *)1);
+  sleep(2);
   printf("end\n");
   return NULL ;
 }
@@ -41,8 +42,9 @@ int main(int argc,char **argv)
       return -1;
     }
   print_ab("123");
-  sleep(1);
-  printf("%p[%d]\n",tret,(int *)tret);
+  //  sleep(1);
+  pthread_cancel(ntid);
+  printf("%p[%d]\n",tret,(tret!=PTHREAD_CANCELED));
 
   return 0;
 }
